@@ -1,0 +1,19 @@
+#! /bin/bash
+#SBATCH --account=dur566_c
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=48
+#SBATCH --ntasks=1
+#SBATCH --mem=128GB
+#SBATCH --time=96:00:00
+#SBATCH --mail-type=ALL
+
+set -x
+set -e
+
+cd ${SLURM_SUBMIT_DIR}
+
+srun apptainer run \
+  --env OMP_NUM_THREADS=48 \
+  /storage/group/dur566/default/dur566/sgrid.sif \
+  ZLA_vMIT_Gibbs_Cold_Equil_B160_a0p2.par
+

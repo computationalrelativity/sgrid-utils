@@ -1,0 +1,22 @@
+diff --git a/TOVstar.c b/TOVstar.c
+index e743cc6..a6342d4 100644
+--- a/TOVstar.c
++++ b/TOVstar.c
+@@ -156,7 +156,7 @@ double TOV_init(double Pc, int pr, double *rf_surf,
+     if(ret<rfe) rfe=ret;
+     else break;
+   }
+-  if( fabs((rfe-rf2)/rf2)> 0.3 || (y[2]>1e-8))
++  if( fabs((rfe-rf2)/rf2)> 0.3 || (y[2]>1e-7))
+   {
+     printf("\nerrorexit1: ret=%g stat=%d ", ret, stat);
+     printf("rf2=%g rfe=%g y[2]=%g\n", rf2, rfe, y[2]);
+@@ -211,7 +211,7 @@ double TOV_init(double Pc, int pr, double *rf_surf,
+   }
+   //printf("rf=%g:  y[1]=%g  y[2]=%g  y[3]=%g  y[4]=%g\n",
+   //       rfe, y[1], y[2], y[3], y[4]);
+-  if( fabs((rfe-rf2)/rf2)> 0.3 || y[2]>1e-8)
++  if( fabs((rfe-rf2)/rf2)> 0.3 || y[2]>1e-7)
+   {
+     printf("\nerrorexit2: ret=%g stat=%d ", ret, stat);
+     printf("rf2=%g rfe=%g y[2]=%g\n", rf2, rfe, y[2]);
