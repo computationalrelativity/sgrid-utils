@@ -10,7 +10,7 @@ LABEL maintainer="David Radice <david.radice@psu.edu>"
 # Update and install basic packages
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install --yes git build-essential liblapack-dev libsuitesparse-dev libgsl-dev gcc
+    apt-get install --yes git build-essential liblapack-dev libsuitesparse-dev libgsl-dev
 
 # Download Wolfgang's packages
 RUN git clone https://github.com/wofti/Packages.git && \
